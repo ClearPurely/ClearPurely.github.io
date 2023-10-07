@@ -1,0 +1,1921 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="STL的介绍, ClearPurely">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>STL的介绍 | ClearPurely</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">ClearPurely</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">ClearPurely</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">STL的介绍</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/c/">
+                                <span class="chip bg-color">c++</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/c/" class="post-category">
+                                c++
+                            </a>
+                        
+                            <a href="/categories/c/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-09-28
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="STL的介绍"><a href="#STL的介绍" class="headerlink" title="STL的介绍"></a>STL的介绍</h2><p>1.STL(Standard TemplateLibrary,标准模板库)</p>
+<p>2.STL提供了六大组件:容器，算法，迭代器，仿函数，适配器，空间配置器</p>
+<p>​	容器：各种数据结构</p>
+<p>​	算法：各种常用的算法（冒泡，排序）</p>
+<p>​	迭代器：扮演了容器与算法之间的胶合剂（类似于指针等）</p>
+<p>​	仿函数：行为类似函数，可作为算法的某种策略</p>
+<p>​	适配器：一种用来修饰容器或者仿函数或迭代器接口的东西</p>
+<p>​	空间配置器：负责空间的配置与管理</p>
+<p>STL六大组件的交互关系，容器通过空间配置器取得数据存储空间，算法通过迭代器存储容器中的内容，仿函数可以协助算法完成不同的策略的变化，适配器可以修饰仿函数。</p>
+<h2 id="三大组件"><a href="#三大组件" class="headerlink" title="三大组件"></a>三大组件</h2><p>容器：<strong>序列式容器</strong>和<strong>关联式容器</strong></p>
+<p>序列式容器：序列式容器就是容器元素在容器中的位置是由元素进入容器的时间和地点来决定</p>
+<p>关联式容器：关联式容器是指容器已经有了一定的规则，容器元素在容器中的位置由容器的规则来决定</p>
+<p>算法分为:<strong>质变算法</strong>和<strong>非质变算法</strong></p>
+<p>质变算法：：是指运算过程中会更改区间内的元素的内容</p>
+<p>非质变算法：是指运算过程中不会更改区间内的元素内容</p>
+<p>迭代器：重点学习双向迭代器和随机访问迭代器</p>
+<p>双向迭代器：++,–可以访问下一个元素和上一个元素</p>
+<p>随机访问迭代器：+2，可以跳2个元素访问元素</p>
+<p>三大组件的关系：容器存储数据，并且提供迭代器，算法使用迭代器来操作容器中的元素</p>
+<h2 id="STL的工作机制"><a href="#STL的工作机制" class="headerlink" title="STL的工作机制"></a>STL的工作机制</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#define _CRT_SECURE_NO_WARNINGS
+#include&lt;iostream&gt;
+using namespace std;
+&#x2F;&#x2F;数组容器
+template&lt;class T&gt;
+class MyArray
+&#123;
+public:
+	&#x2F;&#x2F;保护原生指针，给原生指针取别名
+	typedef T* iterator;
+	MyArray()
+	&#123;
+		mCapacity &#x3D; 10;
+		mSize &#x3D; 10;
+		p &#x3D; new T[mCapacity];
+		for (int i &#x3D; 0; i &lt; mCapacity; i++)
+		&#123;
+			p[i] &#x3D; i + 1;
+		&#125;
+	&#125;
+	&#x2F;&#x2F;提供迭代器，开始位置的迭代器
+	T* begin()
+	&#123;
+		return p;
+	&#125;
+	&#x2F;&#x2F;返回结束位置的迭代器
+	T* end()
+	&#123;
+		return p + mSize;
+	&#125;
+public:
+	T* p;
+	int mCapacity;
+	int mSize;
+&#125;;
+
+&#x2F;&#x2F;算法
+template&lt;class T&gt;
+void printArray(T begin,T end)
+&#123;
+	for (; begin !&#x3D; end; ++begin)
+	&#123;
+		cout &lt;&lt; *begin &lt;&lt; &quot; &quot;;
+	&#125;
+	
+&#125;
+void test01()
+&#123;
+	MyArray&lt;int&gt; arr;
+
+	&#x2F;&#x2F;获取容器提供的开始位置迭代器
+	MyArray&lt;int&gt;::iterator begin&#x3D;arr.begin();
+	&#x2F;&#x2F;获取容器提供的结束位置迭代器
+	MyArray&lt;int&gt;::iterator end &#x3D; arr.end();
+
+	printArray(begin, end);
+&#125;
+int main()
+&#123;
+	test01();
+	system(&quot;pause&quot;);
+	return EXIT_SUCCESS;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="string容器"><a href="#string容器" class="headerlink" title="*string容器"></a>*string容器</h2><p>1.数据结构：连续的存储空间，用一个char*指向这片空间</p>
+<p>2.迭代器:随机访问迭代器</p>
+<p>3.常用的api：</p>
+<p>​	1.构造</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string();&#x2F;&#x2F;创建一个空的字符串 例如: string str;      
+string(conststring&amp; str);&#x2F;&#x2F;使用一个string对象初始化另一个string对象
+string(constchar* s);&#x2F;&#x2F;使用字符串s初始化
+string(int n, char c);&#x2F;&#x2F;使用n个字符c初始化 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	2.基本赋值操作</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string&amp;operator&#x3D;(constchar* s);&#x2F;&#x2F;char*类型字符串 赋值给当前的字符串
+string&amp;operator&#x3D;(conststring&amp;s);&#x2F;&#x2F;把字符串s赋给当前的字符串
+string&amp;operator&#x3D;(char c);&#x2F;&#x2F;字符赋值给当前的字符串
+string&amp; assign(constchar *s);&#x2F;&#x2F;把字符串s赋给当前的字符串
+string&amp; assign(constchar *s, int n);&#x2F;&#x2F;把字符串s的前n个字符赋给当前的字符串
+string&amp; assign(conststring&amp;s);&#x2F;&#x2F;把字符串s赋给当前字符串
+string&amp; assign(int n, char c);&#x2F;&#x2F;用n个字符c赋给当前字符串
+string&amp; assign(conststring&amp;s, int start, int n);&#x2F;&#x2F;将s从start开始n个字符赋值给字符串,如s&#x3D;hello,那么n&#x3D;3,start&#x3D;1，那么是hel中从e开始赋值3-1个字符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	3.存取字符操作</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">char&amp;operator[](int n);&#x2F;&#x2F;通过[]方式取字符
+char&amp; at(int n);&#x2F;&#x2F;通过at方法获取字符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>​	4.拼接</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string&amp;operator+&#x3D;(conststring&amp; str);&#x2F;&#x2F;重载+&#x3D;操作符
+string&amp;operator+&#x3D;(constchar* str);&#x2F;&#x2F;重载+&#x3D;操作符
+string&amp;operator+&#x3D;(constchar c);&#x2F;&#x2F;重载+&#x3D;操作符
+string&amp; append(constchar *s);&#x2F;&#x2F;把字符串s连接到当前字符串结尾
+string&amp; append(constchar *s, int n);&#x2F;&#x2F;把字符串s的前n个字符连接到当前字符串结尾
+string&amp; append(conststring&amp;s);&#x2F;&#x2F;同operator+&#x3D;()
+string&amp; append(conststring&amp;s, int pos, int n);&#x2F;&#x2F;把字符串s中从pos开始的n个字符连接到当前字符串结尾
+string&amp; append(int n, char c);&#x2F;&#x2F;在当前字符串结尾添加n个字符c<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	5.查找和替换</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int find(conststring&amp; str, int pos &#x3D; 0) const; &#x2F;&#x2F;查找str第一次出现位置,从pos开始查找
+int find(constchar* s, int pos &#x3D; 0) const;  &#x2F;&#x2F;查找s第一次出现位置,从pos开始查找
+int find(constchar* s, int pos, int n) const;  &#x2F;&#x2F;从pos位置查找s的前n个字符第一次位置
+int find(constchar c, int pos &#x3D; 0) const;  &#x2F;&#x2F;查找字符c第一次出现位置
+int rfind(conststring&amp; str, int pos &#x3D; npos) const;&#x2F;&#x2F;查找str最后一次位置,从pos开始查找
+int rfind(constchar* s, int pos &#x3D; npos) const;&#x2F;&#x2F;查找s最后一次出现位置,从pos开始查找
+int rfind(constchar* s, int pos, int n) const;&#x2F;&#x2F;从pos查找s的前n个字符最后一次位置
+int rfind(constchar c, int pos &#x3D; 0) const; &#x2F;&#x2F;查找字符c最后一次出现位置
+string&amp; replace(int pos, int n, conststring&amp; str); &#x2F;&#x2F;替换从pos开始n个字符为字符串str
+string&amp; replace(int pos, int n, constchar* s); &#x2F;&#x2F;替换从pos开始的n个字符为字符串s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	6.比较</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;*
+compare函数在&gt;时返回 1，&lt;时返回 -1，&#x3D;&#x3D;时返回 0。
+比较区分大小写，比较时参考字典顺序，排越前面的越小。
+大写的A比小写的a小。
+*&#x2F;
+int compare(conststring&amp;s) const;&#x2F;&#x2F;与字符串s比较
+int compare(constchar *s) const;&#x2F;&#x2F;与字符串s比较<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	7.子串</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string substr(int pos &#x3D; 0, int n &#x3D; npos) const;&#x2F;&#x2F;返回由pos开始的n个字符组成的字符串<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>​	8.插入和删除</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string&amp; insert(int pos, constchar* s); &#x2F;&#x2F;插入字符串
+string&amp; insert(int pos, conststring&amp; str); &#x2F;&#x2F;插入字符串
+string&amp; insert(int pos, int n, char c);&#x2F;&#x2F;在指定位置插入n个字符c
+string&amp; erase(int pos, int n &#x3D; npos);&#x2F;&#x2F;删除从Pos开始的n个字符 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	9.string和const char*转换</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;&#x2F;string 转 char*
+string str &#x3D; &quot;itcast&quot;;
+constchar* cstr &#x3D; str.c_str();
+&#x2F;&#x2F;char* 转 string 
+char* s &#x3D; &quot;itcast&quot;;
+string sstr(s);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>4.常用的api中的注意:</p>
+<p>​	1.[]和at区别：[]如果越界，不抛异常，直接挂。at会抛异常</p>
+<p>​	2.字符串内存重新分配，[]和at获取的字符引用，再次使用时，可以能会出错</p>
+<p>​	3.string和char *的区别：string是一个类，char *是一个指针</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void test10()
+&#123;
+	string s &#x3D; &quot;abcde&quot;;
+	char &amp;a &#x3D; s[2];
+	char &amp;b &#x3D; s[3];
+
+	a &#x3D; &#39;1&#39;;
+	b &#x3D; &#39;2&#39;;
+	cout &lt;&lt; &quot;a:&quot; &lt;&lt; a &lt;&lt; endl;
+	cout &lt;&lt; &quot;b:&quot; &lt;&lt; b &lt;&lt; endl;
+	cout &lt;&lt; s &lt;&lt; endl;
+	cout &lt;&lt; &quot;字符串的原空间地址:&quot; &lt;&lt; (int*)s.c_str() &lt;&lt; endl;
+
+	s &#x3D; &quot;fdasfdasfdsafdasherewrkewhsaferew&quot;;
+	cout &lt;&lt; &quot;字符串的空间地址:&quot; &lt;&lt; (int*)s.c_str() &lt;&lt; endl;
+
+	&#x2F;&#x2F;原空间被释放，但是a还是被释放的s[2]空间的别名，如果操作非法的空间，会出错
+	&#x2F;&#x2F;a &#x3D; &#39;3&#39;;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="vector容器"><a href="#vector容器" class="headerlink" title="*vector容器"></a>*vector容器</h2><p>1.数据结构:连续存储空间</p>
+<p>2.迭代器：随机迭代器</p>
+<p>3.vector容器动态增长原理</p>
+<p>​	1.当存储空不够时，会开辟另一块大的空间，然后把数据拷贝过去，最后在销毁原来的空间</p>
+<p>​	2.申请的空间,会比用户需求大一点</p>
+<p>​	3.重新分配空间，那么原来的迭代器就会失效</p>
+<p>4.常用的api:</p>
+<p>​	1.构造</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">vector&lt;T&gt; v; &#x2F;&#x2F;采用模板实现类实现，默认构造函数
+vector&lt;T&gt; v(n); &#x2F;&#x2F; 定义了n个整型元素的向量，但是这个n个元素没有初始化，值为随机值；
+vector(v.begin(), v.end());&#x2F;&#x2F;将v[begin(), end())区间中的元素拷贝给本身。
+vector(n, elem);&#x2F;&#x2F;构造函数将n个elem拷贝给本身。
+vector(const vector &amp;vec);&#x2F;&#x2F;拷贝构造函数。
+
+&#x2F;&#x2F;例子 使用第二个构造函数 我们可以...
+int arr[] &#x3D; &#123;2,3,4,1,9&#125;;
+vector&lt;int&gt; v1(arr, arr + sizeof(arr) &#x2F; sizeof(int)); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	2.赋值操作</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">assign(beg, end);&#x2F;&#x2F;将[beg, end)区间中的数据拷贝赋值给本身。
+assign(n, elem);&#x2F;&#x2F;将n个elem拷贝赋值给本身。
+vector&amp;operator&#x3D;(const vector  &amp;vec);&#x2F;&#x2F;重载等号操作符
+swap(vec);&#x2F;&#x2F; 将vec与本身的元素互换。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	3.大小操作</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">size();&#x2F;&#x2F;返回容器中元素的个数
+empty();&#x2F;&#x2F;判断容器是否为空
+resize(int num);&#x2F;&#x2F;重新指定容器的长度为num，若容器变长，则以默认值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。
+resize(int num, elem);&#x2F;&#x2F;重新指定容器的长度为num，若容器变长，则以elem值填充新位置。如果容器变短，则末尾超出容器长&gt;度的元素被删除。
+capacity();&#x2F;&#x2F;容器的容量
+reserve(int len);&#x2F;&#x2F;容器预留len个元素长度，预留位置不初始化，元素不可访问。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	4.数据存取</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">at(int idx); &#x2F;&#x2F;返回索引idx所指的数据，如果idx越界，抛出out_of_range异常。
+operator[];&#x2F;&#x2F;返回索引idx所指的数据，越界时，运行直接报错
+front();&#x2F;&#x2F;返回容器中第一个数据元素
+back();&#x2F;&#x2F;返回容器中最后一个数据元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	5.插入和删除</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">insert(const_iterator pos, int count,ele);&#x2F;&#x2F;迭代器指向位置pos插入count个元素ele.
+push_back(ele); &#x2F;&#x2F;尾部插入元素ele
+pop_back();&#x2F;&#x2F;删除最后一个元素
+erase(const_iterator start, const_iterator end);&#x2F;&#x2F;删除迭代器从start到end之间的元素
+erase(const_iterator pos);&#x2F;&#x2F;删除迭代器指向的元素
+clear();&#x2F;&#x2F;删除容器中所有元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>5.常用的api中的注意:</p>
+<p>​	1.resize开辟空间，并初始化。reserve开辟空间，但不初始化.没有初始化的空间不能访问</p>
+<p>6.reserve作用：如果容器要存储大量数据时，要先开辟空间，避免多次申请空间</p>
+<p>7.swap作用:缩小容器的容量</p>
+<h2 id="deque容器"><a href="#deque容器" class="headerlink" title="deque容器"></a>deque容器</h2><p>1.数据结构:逻辑上是连续的存储空间，实际上的由很多块定量的块空间，通过中控制连接起来</p>
+<p>2.迭代器:随机迭代器</p>
+<p>3.常用的api：</p>
+<p>​	1.构造</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">deque&lt;T&gt; deqT;&#x2F;&#x2F;默认构造形式
+deque(beg, end);&#x2F;&#x2F;构造函数将[beg, end)区间中的元素拷贝给本身。
+deque(n, elem);&#x2F;&#x2F;构造函数将n个elem拷贝给本身。
+deque(const deque &amp;deq);&#x2F;&#x2F;拷贝构造函数。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	2.赋值</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">assign(beg, end);&#x2F;&#x2F;将[beg, end)区间中的数据拷贝赋值给本身。
+assign(n, elem);&#x2F;&#x2F;将n个elem拷贝赋值给本身。
+deque&amp;operator&#x3D;(const deque &amp;deq); &#x2F;&#x2F;重载等号操作符 
+swap(deq);&#x2F;&#x2F; 将deq与本身的元素互换<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	3.大小</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">deque.size();&#x2F;&#x2F;返回容器中元素的个数
+deque.empty();&#x2F;&#x2F;判断容器是否为空
+deque.resize(num);&#x2F;&#x2F;重新指定容器的长度为num,若容器变长，则以默认值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。
+deque.resize(num, elem); &#x2F;&#x2F;重新指定容器的长度为num,若容器变长，则以elem值填充新位置,如果容器变短，则末尾超出容器长度的元素被删除。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	4.双端插入和删除操作</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">push_back(elem);&#x2F;&#x2F;在容器尾部添加一个数据
+push_front(elem);&#x2F;&#x2F;在容器头部插入一个数据
+pop_back();&#x2F;&#x2F;删除容器最后一个数据
+pop_front();&#x2F;&#x2F;删除容器第一个数据
+
+at(idx);&#x2F;&#x2F;返回索引idx所指的数据，如果idx越界，抛出out_of_range。
+operator[];&#x2F;&#x2F;返回索引idx所指的数据，如果idx越界，不抛出异常，直接出错。
+front();&#x2F;&#x2F;返回第一个数据。
+back();&#x2F;&#x2F;返回最后一个数据<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	5.插入和删除操作</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">insert(pos,elem);&#x2F;&#x2F;在pos位置插入一个elem元素的拷贝，返回新数据的位置。
+insert(pos,n,elem);&#x2F;&#x2F;在pos位置插入n个elem数据，无返回值。
+insert(pos,beg,end);&#x2F;&#x2F;在pos位置插入[beg,end)区间的数据，无返回值。
+
+clear();&#x2F;&#x2F;移除容器的所有数据
+erase(beg,end);&#x2F;&#x2F;删除[beg,end)区间的数据，返回下一个数据的位置。
+erase(pos);&#x2F;&#x2F;删除pos位置的数据，返回下一个数据的位置。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="stack容器"><a href="#stack容器" class="headerlink" title="stack容器"></a>stack容器</h2><p>1.数据结构：连续的存储空间，只有一个出口，先进后出特性</p>
+<p>2.迭代器:没有迭代器</p>
+<p>3.常用的api:</p>
+<p>​	1.构造函数</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">stack&lt;T&gt; stk;&#x2F;&#x2F;stack采用模板类实现， stack对象的默认构造形式： 
+stack(const stack &amp;stk);&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>​	2.赋值</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">stack&amp;operator&#x3D;(const stack &amp;stk);&#x2F;&#x2F;重载等号操作符<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>​	3.数据存取</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">push(elem);&#x2F;&#x2F;向栈顶添加元素
+pop();&#x2F;&#x2F;从栈顶移除第一个元素
+top();&#x2F;&#x2F;返回栈顶元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>​	3.大小操作</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">empty();&#x2F;&#x2F;判断堆栈是否为空
+size();&#x2F;&#x2F;返回堆栈的大小<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="queue容器"><a href="#queue容器" class="headerlink" title="*queue容器"></a>*queue容器</h2><p>1.数据结构：连续的存储空间，有两个口，一个是进入数据，一个是出数据，有先进先出的特性</p>
+<p>2.迭代器：没有迭代器</p>
+<p>3.常用的api:</p>
+<p>​	1.构造函数</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">queue&lt;T&gt; queT;&#x2F;&#x2F;queue采用模板类实现，queue对象的默认构造形式：
+queue(const queue &amp;que);&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>​	2.存取、插入和删除操作</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">push(elem);&#x2F;&#x2F;往队尾添加元素
+pop();&#x2F;&#x2F;从队头移除第一个元素
+back();&#x2F;&#x2F;返回最后一个元素
+front();&#x2F;&#x2F;返回第一个元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	3.赋值</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">queue&amp;operator&#x3D;(const queue &amp;que);&#x2F;&#x2F;重载等号操作符	<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>​	4.大小操作</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">empty();&#x2F;&#x2F;判断队列是否为空
+size();&#x2F;&#x2F;返回队列的大小<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="list容器"><a href="#list容器" class="headerlink" title="*list容器"></a>*list容器</h2><p>1.数据结构：双向循环链表</p>
+<p>2.迭代器：双向迭代器</p>
+<p>3.常用的api:</p>
+<p>​	1.构造</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">list&lt;T&gt; lstT;&#x2F;&#x2F;list采用采用模板类实现,对象的默认构造形式：
+list(beg,end);&#x2F;&#x2F;构造函数将[beg, end)区间中的元素拷贝给本身。
+list(n,elem);&#x2F;&#x2F;构造函数将n个elem拷贝给本身。
+list(const list &amp;lst);&#x2F;&#x2F;拷贝构造函数。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	2.数据元素的插入和删除</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">push_back(elem);&#x2F;&#x2F;在容器尾部加入一个元素
+pop_back();&#x2F;&#x2F;删除容器中最后一个元素
+push_front(elem);&#x2F;&#x2F;在容器开头插入一个元素
+pop_front();&#x2F;&#x2F;从容器开头移除第一个元素
+insert(pos,elem);&#x2F;&#x2F;在pos位置插elem元素的拷贝，返回新数据的位置。
+insert(pos,n,elem);&#x2F;&#x2F;在pos位置插入n个elem数据，无返回值。
+insert(pos,beg,end);&#x2F;&#x2F;在pos位置插入[beg,end)区间的数据，无返回值。
+clear();&#x2F;&#x2F;移除容器的所有数据
+erase(beg,end);&#x2F;&#x2F;删除[beg,end)区间的数据，返回下一个数据的位置。
+erase(pos);&#x2F;&#x2F;删除pos位置的数据，返回下一个数据的位置。
+remove(elem);&#x2F;&#x2F;删除容器中所有与elem值匹配的元素。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	3.大小操作</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">size();&#x2F;&#x2F;返回容器中元素的个数
+empty();&#x2F;&#x2F;判断容器是否为空
+resize(num);&#x2F;&#x2F;重新指定容器的长度为num，
+&#x2F;&#x2F;若容器变长，则以默认值填充新位置。
+&#x2F;&#x2F;如果容器变短，则末尾超出容器长度的元素被删除。
+resize(num, elem);&#x2F;&#x2F;重新指定容器的长度为num，
+&#x2F;&#x2F;若容器变长，则以elem值填充新位置。
+&#x2F;&#x2F;如果容器变短，则末尾超出容器长度的元素被删除。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	4.赋值操作</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">assign(beg, end);&#x2F;&#x2F;将[beg, end)区间中的数据拷贝赋值给本身。
+assign(n, elem);&#x2F;&#x2F;将n个elem拷贝赋值给本身。
+list&amp;operator&#x3D;(const list &amp;lst);&#x2F;&#x2F;重载等号操作符
+swap(lst);&#x2F;&#x2F;将lst与本身的元素互换。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	5.数据的存取</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">front();&#x2F;&#x2F;返回第一个元素。
+back();&#x2F;&#x2F;返回最后一个元素。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>​	6.反转和排序</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">reverse();&#x2F;&#x2F;反转链表，比如lst包含1,3,5元素，运行此方法后，lst就包含5,3,1元素。
+sort(); &#x2F;&#x2F;list排序
+
+list.unique();&#x2F;&#x2F;去除重复的单词<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>4.注意：list容器不能使用常用的sort,只能使用自己的sort</p>
+<h2 id="pair对组"><a href="#pair对组" class="headerlink" title="pair对组"></a>pair对组</h2><p>1.pair对组是一个类，类中有两个公有的成员变量</p>
+<p>2.对组通常用来接收key-vluae这样的元素</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;&#x2F;第一种方法创建一个对组
+pair&lt;string, int&gt; pair1(string(&quot;name&quot;), 20);
+cout &lt;&lt; pair1.first &lt;&lt; endl; &#x2F;&#x2F;访问pair第一个值
+cout &lt;&lt; pair1.second &lt;&lt; endl;&#x2F;&#x2F;访问pair第二个值
+&#x2F;&#x2F;第二种
+pair&lt;string, int&gt; pair2 &#x3D; make_pair(&quot;name&quot;, 30);
+cout &lt;&lt; pair2.first &lt;&lt; endl;
+cout &lt;&lt; pair2.second &lt;&lt; endl;
+&#x2F;&#x2F;pair&#x3D;赋值
+pair&lt;string, int&gt; pair3 &#x3D; pair2;
+cout &lt;&lt; pair3.first &lt;&lt; endl;
+cout &lt;&lt; pair3.second &lt;&lt; endl;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="set-multiset容器"><a href="#set-multiset容器" class="headerlink" title="*set&#x2F;multiset容器"></a>*set&#x2F;multiset容器</h2><p>1.set容器是关联式容器，容器自身有规则，通过键值排序，set容器中的元素是键值也是实值</p>
+<p>2.set容器和multiset容器的区别是multiset允许有相同的元素</p>
+<p>3.数据结构：平衡二叉树</p>
+<p>4.迭代器：双向迭代器</p>
+<p>5.常用的api:</p>
+<p>​	1.构造</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">set&lt;T&gt; st;&#x2F;&#x2F;set默认构造函数：
+mulitset&lt;T&gt; mst; &#x2F;&#x2F;multiset默认构造函数: 
+set(const set &amp;st);&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>​	2.赋值</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">set&amp;operator&#x3D;(const set &amp;st);&#x2F;&#x2F;重载等号操作符
+swap(st);&#x2F;&#x2F;交换两个集合容器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>​	3.大小</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">size();&#x2F;&#x2F;返回容器中元素的数目
+empty();&#x2F;&#x2F;判断容器是否为空<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>​	4.插入和删除</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">insert(elem);&#x2F;&#x2F;在容器中插入元素。
+clear();&#x2F;&#x2F;清除所有元素
+erase(pos);&#x2F;&#x2F;删除pos迭代器所指的元素，返回下一个元素的迭代器。
+erase(beg, end);&#x2F;&#x2F;删除区间[beg,end)的所有元素 ，返回下一个元素的迭代器。
+erase(elem);&#x2F;&#x2F;删除容器中值为elem的元素。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	5.查找操作</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">find(key);&#x2F;&#x2F;查找键key是否存在,若存在，返回该键的元素的迭代器；若不存在，返回set.end();
+count(key);&#x2F;&#x2F;查找键key的元素个数
+lower_bound(keyElem);&#x2F;&#x2F;返回第一个key&gt;&#x3D;keyElem元素的迭代器。
+upper_bound(keyElem);&#x2F;&#x2F;返回第一个key&gt;keyElem元素的迭代器。
+equal_range(keyElem);&#x2F;&#x2F;返回容器中key与keyElem相等的上下限的两个迭代器。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>6.改变规则：默认是从小到大，改变规则，加入谓词到&lt;&gt;第二个参数中</p>
+<p>7.注意：</p>
+<p>​	1.set容器插入相同元素时，不会报错，但是不插入数据</p>
+<p>​	2.set容器存储对象时，需要告诉set容器的规则</p>
+<p>​	</p>
+<h2 id="map-multimap容器"><a href="#map-multimap容器" class="headerlink" title="*map&#x2F;multimap容器"></a>*map&#x2F;multimap容器</h2><p>1.map&#x2F;multimap也是关联式容器，容器自身有规则，通过键值排序，map容器中的元素是对组，对组的第一个元素是键值，不能改变，第二个元素是实值，可以改变</p>
+<p>2.数据结构：平衡二叉树</p>
+<p>3.迭代器：双向迭代器</p>
+<p>4.map容器和multimap容器的区别是multimap允许有相同的元素</p>
+<p>5.常用的api:</p>
+<p>​	1.构造</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">map&lt;T1, T2&gt; mapTT;&#x2F;&#x2F;map默认构造函数: 
+map(const map &amp;mp);&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>​	2.赋值</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">map&amp;operator&#x3D;(const map &amp;mp);&#x2F;&#x2F;重载等号操作符
+swap(mp);&#x2F;&#x2F;交换两个集合容器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>​	3.大小</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">size();&#x2F;&#x2F;返回容器中元素的数目
+empty();&#x2F;&#x2F;判断容器是否为空<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>​	4.查找</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">find(key);&#x2F;&#x2F;查找键key是否存在,若存在，返回该键的元素的迭代器；&#x2F;若不存在，返回map.end();
+count(keyElem);&#x2F;&#x2F;返回容器中key为keyElem的对组个数。对map来说，要么是0，要么是1。对multimap来说，值可能大于1。
+lower_bound(keyElem);&#x2F;&#x2F;返回第一个key&gt;&#x3D;keyElem元素的迭代器。
+upper_bound(keyElem);&#x2F;&#x2F;返回第一个key&gt;keyElem元素的迭代器。	
+equal_range(keyElem);&#x2F;&#x2F;返回容器中key与keyElem相等的上下限的两个迭代器。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	5.插入</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">map.insert(...); &#x2F;&#x2F;往容器插入元素，返回pair&lt;iterator,bool&gt;
+map&lt;int, string&gt; mapStu;
+&#x2F;&#x2F; 第一种 通过pair的方式插入对象
+mapStu.insert(pair&lt;int, string&gt;(3, &quot;小张&quot;));
+&#x2F;&#x2F; 第二种 通过pair的方式插入对象
+mapStu.inset(make_pair(-1, &quot;校长&quot;));
+&#x2F;&#x2F; 第三种 通过value_type的方式插入对象
+mapStu.insert(map&lt;int, string&gt;::value_type(1, &quot;小李&quot;));
+&#x2F;&#x2F; 第四种 通过数组的方式插入值
+mapStu[3] &#x3D; &quot;小刘&quot;;
+mapStu[5] &#x3D; &quot;小王&quot;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​	6.删除</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">clear();&#x2F;&#x2F;删除所有元素
+erase(pos);&#x2F;&#x2F;删除pos迭代器所指的元素，返回下一个元素的迭代器。
+erase(beg,end);&#x2F;&#x2F;删除区间[beg,end)的所有元素 ，返回下一个元素的迭代器。
+erase(keyElem);&#x2F;&#x2F;删除容器中key为keyElem的对组。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="STL的深浅拷贝问题"><a href="#STL的深浅拷贝问题" class="headerlink" title="STL的深浅拷贝问题"></a>STL的深浅拷贝问题</h2><p>1.把对象放入容器，其实是拷贝一份对象到容器。</p>
+<p>2.注意：</p>
+<p>​	1.拷贝构造要能被调用<br>​	2.注意要浅拷贝问题</p>
+<h2 id="函数对象"><a href="#函数对象" class="headerlink" title="函数对象"></a>函数对象</h2><p>1.什么是函数对象</p>
+<p>​	1.类中重载了()，这个类实例化的对象叫函数对象（仿函数）;</p>
+<p>​	2.一元仿函数是operator()中只需要一个参数。二元仿函数是operator()中需要二个参数</p>
+<p>2.有什么用</p>
+<p>​	1.做为算法的策略</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void test()
+&#123;
+	vector&lt;int&gt; v;
+	v.push_back(8);
+	v.push_back(1);
+	v.push_back(6);
+	v.push_back(3);
+	v.push_back(7);
+
+
+	sort(v.begin(), v.end(), greater&lt;int&gt;());
+
+	for_each(v.begin(), v.end(), [](int val)&#123;cout &lt;&lt; val &lt;&lt; &quot; &quot;; &#125;);
+	&#x2F;&#x2F;[](int val)&#123;cout &lt;&lt; val &lt;&lt; &quot; &quot;; &#125;&#x2F;&#x2F;匿名函数
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>3.函数对象和普通函数的区别</p>
+<p>​	1.函数对象可以有自己的状态</p>
+<p>​	2.普通函数没有类型，函数对象有类型</p>
+<p>​	3.函数对象比普通函数执行效率有可能更高（成员函数自动申请为内联函数）</p>
+<p>4.谓词</p>
+<p>​	1.谓词是指普通函数或重载的operator()返回值是bool类型的函数对象(仿函数)。</p>
+<p>​	2.谓词可以作为一个判断式</p>
+<p>​	3.接受一个参数，那么叫做一元谓词,如果接受两个参数，那么叫做二元谓词</p>
+<p>5.内建函数对象</p>
+<p>​	1.使用内建的函数对象要加入头文件#include<functional></p>
+<p>​	</p>
+<h2 id="函数对象适配"><a href="#函数对象适配" class="headerlink" title="函数对象适配"></a>函数对象适配</h2><p>1.什么是函数对象适配：当函数对象的参数不够用，那么可以用适配器来配置函数对象。</p>
+<p>2.函数适配器：bind1st,bind2nd,将二元函数对象配置为一元函数对象</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;&#x2F;第一步:继承binary_function&lt;参数1，参数2，返回类型&gt;
+struct Myfunc:public binary_function&lt;int,int,void&gt;
+&#123;
+	void operator()(int v1,int v2)const &#x2F;&#x2F;第二步：加上const成为常函数，参数变2个
+	&#123;
+		&#x2F;&#x2F;cout &lt;&lt; v1 &lt;&lt; &quot; &quot; &lt;&lt; endl;
+		cout &lt;&lt; v1 + v2 &lt;&lt; endl;&#x2F;&#x2F;第三步：实现函数体
+	&#125;
+
+&#125;;
+&#x2F;&#x2F;需求：打印时，每个元素加100然后打印出来
+void test()
+&#123;
+	vector&lt;int&gt; v;
+	v.push_back(10);
+	v.push_back(20);
+	v.push_back(30);
+	v.push_back(40);
+	v.push_back(50);
+
+	&#x2F;&#x2F;for_each(v.begin(), v.end(), Myfunc());
+	&#x2F;&#x2F;第四步：用bind2nd来绑定函数对象
+	for_each(v.begin(), v.end(), bind2nd(Myfunc(),100));
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>3.bind1st和bind2nd的区别<br>bind1st把100绑定给第一个参数，bind2nd把100绑定给第二个参数</p>
+<p>4.函数对象适配器 not1 not2 取反</p>
+<p>1.not1和not2的区别：not1针对一元函数对象，not2针对二元函数对象</p>
+<p>2.使用not1和not2</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">
+&#x2F;&#x2F;第一步：继承
+struct MyNotfunc:public unary_function&lt;int,bool&gt;
+&#123;
+	bool operator()(int v)const &#x2F;&#x2F;第二步：变为常函数
+	&#123;
+		return v &gt;&#x3D; 20;
+	&#125;
+	 
+&#125;;
+&#x2F;&#x2F;not1 和not2 
+void myPrint(int val)
+&#123;
+	cout &lt;&lt; val &lt;&lt; &quot; &quot;;
+&#125;
+
+void test02()
+&#123;
+	vector&lt;int&gt; v;
+	v.push_back(10);
+	v.push_back(50);
+	v.push_back(30);
+	v.push_back(40);
+	v.push_back(50);
+
+	&#x2F;&#x2F;find_if()
+
+	&#x2F;*
+	_InIt _Find_if(_InIt _First, _InIt _Last, _Pr _Pred)
+	&#123;	&#x2F;&#x2F; find first satisfying _Pred
+		for (; _First !&#x3D; _Last; ++_First)
+		if (_Pred(*_First))
+			break;
+		return (_First);
+	&#125;
+	*&#x2F;
+	&#x2F;&#x2F;第三步：适配
+	vector&lt;int&gt;::iterator it&#x3D;find_if(v.begin(), v.end(), not1(MyNotfunc()));
+	if (it &#x3D;&#x3D; v.end())
+	&#123;
+		cout &lt;&lt; &quot;查找失败&quot; &lt;&lt; endl;
+	&#125;
+	else
+	&#123;
+		cout &lt;&lt; &quot;查找成功&#x3D;&quot; &lt;&lt; *it &lt;&lt; endl;
+	&#125;
+
+	&#x2F;&#x2F;not2的使用
+	&#x2F;&#x2F;less 二元函数对象
+	vector&lt;int&gt; v2;
+	v2.push_back(10);
+	v2.push_back(50);
+	v2.push_back(30);
+	v2.push_back(40);
+	v2.push_back(50);
+	&#x2F;&#x2F;release模式下可以
+	sort(v2.begin(), v2.end(),not2(less&lt;int&gt;()));
+	for_each(v2.begin(), v2.end(), myPrint);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>5.普通函数进行适配</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;&#x2F;普通函数进行适配 ptr_fun
+&#x2F;&#x2F;第一步:把一个参数变为二个参数
+void myprint2(int val,int val2)
+&#123;
+	cout &lt;&lt; val+val2&lt;&lt; &quot; &quot;;
+&#125;
+void test03()
+&#123;
+	vector&lt;int&gt; v;
+	v.push_back(10);
+	v.push_back(20);
+	v.push_back(30);
+	v.push_back(40);
+	v.push_back(50);
+
+	&#x2F;&#x2F;第二步：把普通函数变为函数对象 ptr_fun
+	for_each(v.begin(), v.end(), bind2nd(ptr_fun(myprint2),100));
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>6.成员函数适配</p>
+<p>1.mem_fun : 如果存储的是对象指针，需要使用mem_fun</p>
+<p>2.mem_fun_ref : 如果存储的是对象，需要使用mem_fun_ref</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Maker
+&#123;
+public:
+	Maker(string name,int age)
+	&#123;
+		this-&gt;name &#x3D; name;
+		this-&gt;age &#x3D; age;
+	&#125;
+	&#x2F;&#x2F;成员函数
+	void MyprintMaker()
+	&#123;
+		cout &lt;&lt; &quot;Name:&quot; &lt;&lt; this-&gt;name &lt;&lt; &quot; Age:&quot; &lt;&lt; this-&gt;age &lt;&lt; endl;
+	&#125;
+public:
+	string name;
+	int age;
+&#125;;
+&#x2F;&#x2F;void MyprintMaker(Maker m)
+&#x2F;&#x2F;&#123;
+&#x2F;&#x2F;	cout &lt;&lt; &quot;Name:&quot; &lt;&lt; m.name &lt;&lt; &quot; Age:&quot; &lt;&lt; m.age &lt;&lt; endl;
+&#x2F;&#x2F;&#125;
+void test04()
+&#123;
+	vector&lt;Maker&gt; v;
+	v.push_back(Maker(&quot;aaa&quot;, 10));
+	v.push_back(Maker(&quot;bbb&quot;, 20));
+	v.push_back(Maker(&quot;ccc&quot;, 30));
+	&#x2F;&#x2F;当容器存储的是对象，用mem_fun_ref适配他的成员函数
+	for_each(v.begin(), v.end(), mem_fun_ref(&amp;Maker::MyprintMaker));
+	cout &lt;&lt; &quot;-------------&quot; &lt;&lt; endl;
+	vector&lt;Maker*&gt; vp;
+	vp.push_back(new Maker(&quot;aaa&quot;, 10));
+	vp.push_back(new Maker(&quot;bbb&quot;, 20));
+	vp.push_back(new Maker(&quot;ccc&quot;, 30));
+	&#x2F;&#x2F;当容器存储的是对象指针，用mem_fun适配他的成员函数
+	for_each(vp.begin(), vp.end(), mem_fun(&amp;Maker::MyprintMaker));
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="空间配置器"><a href="#空间配置器" class="headerlink" title="空间配置器"></a>空间配置器</h2><p>如果申请的内存大小超过128，那么空间配置器就自动调用一级空间配置器。反之调用二级空间配置器。</p>
+<h2 id="算法概念"><a href="#算法概念" class="headerlink" title="算法概念"></a>算法概念</h2><p>1.算法通过迭代器来操作容器中元素</p>
+<p>2.算法的头文件:<algorithm><functional><numeric></p>
+<h2 id="遍历算法"><a href="#遍历算法" class="headerlink" title="遍历算法"></a>遍历算法</h2><p>1.for_each：遍历打印</p>
+<p>​	1.for_each(开始迭代器，结束迭代器，函数对象)</p>
+<p>2.transform:搬运</p>
+<p>​	1.transform（源开始迭代器，源结束迭代器，目标开始迭代器，函数对象）</p>
+<p>​	2.transform（源1开始迭代器，源1结束迭代器，源2开始迭代器，目标开始迭代器，函数对象）</p>
+<h2 id="查找算法"><a href="#查找算法" class="headerlink" title="查找算法"></a>查找算法</h2><p>1.find:查找元素</p>
+<p>​	find(开始迭代器，结束迭代器，要查找的数值);</p>
+<p>​	find_if(开始迭代器，结束迭代器,谓词或函数对象);</p>
+<p>2.adjacent_find算法 查找相邻重复元素</p>
+<p>​	adjacent_find(开始迭代器，结束迭代器)</p>
+<p>​	adjacent_find(开始迭代器，结束迭代器,谓词或函数对象);</p>
+<p>3.binary_search算法 二分查找法,注意：数据必须要有序，返回值是bool</p>
+<p>​	binary_search(开始迭代器，结束迭代器,数值)；</p>
+<p>​	binary_search（开始迭代器，结束迭代器,对象，函数对象）；</p>
+<p>​	注意：存储对象，如果使用less，那么数据要是升序,并且要重载&lt;，greater这需要数据是降序，并且要重载&gt;</p>
+<p>4.count 统计元素个数</p>
+<p>​	count（开始迭代器，结束迭代器,数值）；</p>
+<p>​	count（开始迭代器，结束迭代器，谓词或函数对象）；</p>
+<h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><p>1.merge算法 容器元素合并，并存储到另一容器中</p>
+<p>​	1.如果数据是升序，那么第六个参数就不用写</p>
+<p>​	merge(开始迭代器1，结束迭代器1，开始迭代器2，结束迭代器2，目标开始迭代器)；</p>
+<p>​	2.如果数据是降序，那么第六个参数就要写greater&lt;int&gt;()</p>
+<p>​	merge(开始迭代器1，结束迭代器1，开始迭代器2，结束迭代器2，目标开始迭代器，greater&lt;int&gt;())；</p>
+<p>2.sort算法 容器元素排序</p>
+<p>​	1.sort(开始迭代器，结束迭代器)；</p>
+<p>​	2.存储的是对象时,sort(开始迭代器，结束迭代器,函数对象)；</p>
+<p>3.random_shuffle：洗牌</p>
+<p>​	定义随机种子：srand((unsigned int)time(NULL));</p>
+<p>​	random_shuffle（开始迭代器，结束迭代器）</p>
+<p>4.reverse算法 反转指定范围的元素</p>
+<p>​	reverse（开始迭代器，结束迭代器）</p>
+<h2 id="拷贝和替换算法"><a href="#拷贝和替换算法" class="headerlink" title="拷贝和替换算法"></a>拷贝和替换算法</h2><p>1.copy：拷贝</p>
+<p>​	copy(源开始迭代器，源结束迭代器，目标开始迭代器)；</p>
+<p>2.replace算法 将容器内指定范围的旧元素修改为新元素，replace_if算法 将容器内指定范围满足条件的元素替换为新元素</p>
+<p>​	1.replace（开始迭代器，结束迭代器，旧值，新值）；</p>
+<p>​	2.replace_if(开始迭代器，结束迭代器,谓词,新值)；</p>
+<p>3.swap，交换容器</p>
+<p>​	swap(容器1，容器2)；</p>
+<h2 id="算术生成算法"><a href="#算术生成算法" class="headerlink" title="算术生成算法"></a>算术生成算法</h2><p>1.accumulate算法 计算容器元素累计总和</p>
+<p>​	1.int ret&#x3D;accumulate（开始迭代器，结束迭代器，数值）；&#x2F;&#x2F;第三个参数是在总和上再加上0</p>
+<p>​	2.int ret&#x3D;accumulate(开始迭代器，结束迭代器，数值,函数对象)；&#x2F;&#x2F;针对存储对象</p>
+<p>2.fill算法 向容器中添加元素</p>
+<p>​	1.要开辟容器的空间.v.resize(10);</p>
+<p>​	2.fill(开始迭代器，结束迭代器,要填充的数值)</p>
+<h2 id="集合算法"><a href="#集合算法" class="headerlink" title="集合算法"></a>集合算法</h2><p>1.注意:两个集合必须是有序序列</p>
+<p>2.set_intersection算法 求两个集合的交集</p>
+<p>​	set_intersection（源开始迭代器1，源结束迭代器1，源开始迭代器2，源结束迭代器2，,目标开始迭代器）；</p>
+<p>3.set_union算法 求两个set集合的并集</p>
+<p>​	set_union（源开始迭代器1，源结束迭代器1，源开始迭代器2，源结束迭代器2，,目标开始迭代器）；</p>
+<p>4.set_difference算法 求两个set集合的差集<br>&#x2F;&#x2F;假如A集合有1,2,3,4,5 B集合有2,3,4,5,6 A集合减B集合的结果就是1</p>
+<p>​	set_difference（源开始迭代器1，源结束迭代器1，源开始迭代器2，源结束迭代器2，,目标开始迭代器）；</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">ClearPurely</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://clearpurely.github.io/2023/09/28/c++STL%E5%BA%93/">https://clearpurely.github.io/2023/09/28/c++STL%E5%BA%93/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">ClearPurely</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/c/">
+                                    <span class="chip bg-color">c++</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/09/28/c++STL%E5%BA%93/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="STL的介绍">
+                        
+                        <span class="card-title">STL的介绍</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/c/" class="post-category">
+                                    c++
+                                </a>
+                            
+                            <a href="/categories/c/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/c/">
+                        <span class="chip bg-color">c++</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/09/28/unity%E5%88%9D%E7%BA%A7%E7%9F%A5%E8%AF%86(%E9%9D%A2%E8%AF%95)/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="unity初级知识">
+                        
+                        <span class="card-title">unity初级知识</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/c/" class="post-category">
+                                    c#
+                                </a>
+                            
+                            <a href="/categories/c/unity/" class="post-category">
+                                    unity
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/unity/">
+                        <span class="chip bg-color">unity</span>
+                    </a>
+                    
+                    <a href="/tags/c/">
+                        <span class="chip bg-color">c#</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="7648122100"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023</span>
+            
+            <span id="year">2023</span>
+            <a href="/about" target="_blank">ClearPurely</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/ClearPurely" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:425064225@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=425064225" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 425064225" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
