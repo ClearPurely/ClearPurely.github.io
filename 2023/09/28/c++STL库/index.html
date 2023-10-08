@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="STL的介绍, ClearPurely">
+    <meta name="keywords" content="STL的总结归纳, ClearPurely">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>STL的介绍 | ClearPurely</title>
+    <title>STL的总结归纳 | ClearPurely</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">STL的介绍</h1>
+                    <h1 class="description center-align post-title">STL的总结归纳</h1>
                 </div>
             </div>
         </div>
@@ -532,44 +532,44 @@ int main()
 <h2 id="string容器"><a href="#string容器" class="headerlink" title="*string容器"></a>*string容器</h2><p>1.数据结构：连续的存储空间，用一个char*指向这片空间</p>
 <p>2.迭代器:随机访问迭代器</p>
 <p>3.常用的api：</p>
-<p>​	1.构造</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string();&#x2F;&#x2F;创建一个空的字符串 例如: string str;      
-string(conststring&amp; str);&#x2F;&#x2F;使用一个string对象初始化另一个string对象
-string(constchar* s);&#x2F;&#x2F;使用字符串s初始化
-string(int n, char c);&#x2F;&#x2F;使用n个字符c初始化 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>​	1.构造函数</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string();	&#x2F;&#x2F;创建一个空的字符串 例如: string str;      
+string(conststring&amp; str);	&#x2F;&#x2F;使用一个string对象初始化另一个string对象
+string(constchar* s);	&#x2F;&#x2F;使用字符串s初始化
+string(int n, char c);	&#x2F;&#x2F;使用n个字符c初始化 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	2.基本赋值操作</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string&amp;operator&#x3D;(constchar* s);&#x2F;&#x2F;char*类型字符串 赋值给当前的字符串
-string&amp;operator&#x3D;(conststring&amp;s);&#x2F;&#x2F;把字符串s赋给当前的字符串
-string&amp;operator&#x3D;(char c);&#x2F;&#x2F;字符赋值给当前的字符串
-string&amp; assign(constchar *s);&#x2F;&#x2F;把字符串s赋给当前的字符串
-string&amp; assign(constchar *s, int n);&#x2F;&#x2F;把字符串s的前n个字符赋给当前的字符串
-string&amp; assign(conststring&amp;s);&#x2F;&#x2F;把字符串s赋给当前字符串
-string&amp; assign(int n, char c);&#x2F;&#x2F;用n个字符c赋给当前字符串
-string&amp; assign(conststring&amp;s, int start, int n);&#x2F;&#x2F;将s从start开始n个字符赋值给字符串,如s&#x3D;hello,那么n&#x3D;3,start&#x3D;1，那么是hel中从e开始赋值3-1个字符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string&amp;operator&#x3D;(constchar* s);	&#x2F;&#x2F;char*类型字符串 赋值给当前的字符串
+string&amp;operator&#x3D;(conststring&amp;s);	&#x2F;&#x2F;把字符串s赋给当前的字符串
+string&amp;operator&#x3D;(char c);	&#x2F;&#x2F;字符赋值给当前的字符串
+string&amp; assign(constchar *s);	&#x2F;&#x2F;把字符串s赋给当前的字符串
+string&amp; assign(constchar *s, int n);	&#x2F;&#x2F;把字符串s的前n个字符赋给当前的字符串
+string&amp; assign(conststring&amp;s);	&#x2F;&#x2F;把字符串s赋给当前字符串
+string&amp; assign(int n, char c);	&#x2F;&#x2F;用n个字符c赋给当前字符串
+string&amp; assign(conststring&amp;s, int start, int n);	&#x2F;&#x2F;将s从start开始n个字符赋值给字符串,如s&#x3D;hello,那么n&#x3D;3,start&#x3D;1，那么是hel中从e开始赋值3-1个字符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	3.存取字符操作</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">char&amp;operator[](int n);&#x2F;&#x2F;通过[]方式取字符
-char&amp; at(int n);&#x2F;&#x2F;通过at方法获取字符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">char&amp;operator[](int n);		&#x2F;&#x2F;通过[]方式取字符
+char&amp; at(int n);	&#x2F;&#x2F;通过at方法获取字符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p>​	4.拼接</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string&amp;operator+&#x3D;(conststring&amp; str);&#x2F;&#x2F;重载+&#x3D;操作符
-string&amp;operator+&#x3D;(constchar* str);&#x2F;&#x2F;重载+&#x3D;操作符
-string&amp;operator+&#x3D;(constchar c);&#x2F;&#x2F;重载+&#x3D;操作符
-string&amp; append(constchar *s);&#x2F;&#x2F;把字符串s连接到当前字符串结尾
-string&amp; append(constchar *s, int n);&#x2F;&#x2F;把字符串s的前n个字符连接到当前字符串结尾
-string&amp; append(conststring&amp;s);&#x2F;&#x2F;同operator+&#x3D;()
-string&amp; append(conststring&amp;s, int pos, int n);&#x2F;&#x2F;把字符串s中从pos开始的n个字符连接到当前字符串结尾
-string&amp; append(int n, char c);&#x2F;&#x2F;在当前字符串结尾添加n个字符c<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>​	4.拼接字符串</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string&amp; operator+&#x3D;(conststring&amp; str);	&#x2F;&#x2F;重载+&#x3D;操作符
+string&amp; operator+&#x3D;(constchar* str);	&#x2F;&#x2F;重载+&#x3D;操作符
+string&amp; operator+&#x3D;(constchar c);	&#x2F;&#x2F;重载+&#x3D;操作符
+string&amp; append(constchar *s);	&#x2F;&#x2F;把字符串s连接到当前字符串结尾
+string&amp; append(constchar *s, int n);	&#x2F;&#x2F;把字符串s的前n个字符连接到当前字符串结尾
+string&amp; append(conststring&amp;s);	&#x2F;&#x2F;同operator+&#x3D;()
+string&amp; append(conststring&amp;s, int pos, int n);	&#x2F;&#x2F;把字符串s中从pos开始的n个字符连接到当前字符串结尾
+string&amp; append(int n, char c);	&#x2F;&#x2F;在当前字符串结尾添加n个字符c<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	5.查找和替换</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int find(conststring&amp; str, int pos &#x3D; 0) const; &#x2F;&#x2F;查找str第一次出现位置,从pos开始查找
 int find(constchar* s, int pos &#x3D; 0) const;  &#x2F;&#x2F;查找s第一次出现位置,从pos开始查找
 int find(constchar* s, int pos, int n) const;  &#x2F;&#x2F;从pos位置查找s的前n个字符第一次位置
 int find(constchar c, int pos &#x3D; 0) const;  &#x2F;&#x2F;查找字符c第一次出现位置
-int rfind(conststring&amp; str, int pos &#x3D; npos) const;&#x2F;&#x2F;查找str最后一次位置,从pos开始查找
-int rfind(constchar* s, int pos &#x3D; npos) const;&#x2F;&#x2F;查找s最后一次出现位置,从pos开始查找
-int rfind(constchar* s, int pos, int n) const;&#x2F;&#x2F;从pos查找s的前n个字符最后一次位置
+int rfind(conststring&amp; str, int pos &#x3D; npos) const;	&#x2F;&#x2F;查找str最后一次位置,从pos开始查找
+int rfind(constchar* s, int pos &#x3D; npos) const;	&#x2F;&#x2F;查找s最后一次出现位置,从pos开始查找
+int rfind(constchar* s, int pos, int n) const;	&#x2F;&#x2F;从pos查找s的前n个字符最后一次位置
 int rfind(constchar c, int pos &#x3D; 0) const; &#x2F;&#x2F;查找字符c最后一次出现位置
 string&amp; replace(int pos, int n, conststring&amp; str); &#x2F;&#x2F;替换从pos开始n个字符为字符串str
 string&amp; replace(int pos, int n, constchar* s); &#x2F;&#x2F;替换从pos开始的n个字符为字符串s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -580,28 +580,28 @@ compare函数在&gt;时返回 1，&lt;时返回 -1，&#x3D;&#x3D;时返回 0。
 比较区分大小写，比较时参考字典顺序，排越前面的越小。
 大写的A比小写的a小。
 *&#x2F;
-int compare(conststring&amp;s) const;&#x2F;&#x2F;与字符串s比较
-int compare(constchar *s) const;&#x2F;&#x2F;与字符串s比较<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+int compare(conststring&amp;s) const;	&#x2F;&#x2F;与字符串s比较
+int compare(constchar *s) const;	&#x2F;&#x2F;与字符串s比较<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	7.子串</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string substr(int pos &#x3D; 0, int n &#x3D; npos) const;&#x2F;&#x2F;返回由pos开始的n个字符组成的字符串<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string substr(int pos &#x3D; 0, int n &#x3D; npos) const;	&#x2F;&#x2F;返回由pos开始的n个字符组成的字符串<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>​	8.插入和删除</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string&amp; insert(int pos, constchar* s); &#x2F;&#x2F;插入字符串
 string&amp; insert(int pos, conststring&amp; str); &#x2F;&#x2F;插入字符串
-string&amp; insert(int pos, int n, char c);&#x2F;&#x2F;在指定位置插入n个字符c
-string&amp; erase(int pos, int n &#x3D; npos);&#x2F;&#x2F;删除从Pos开始的n个字符 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+string&amp; insert(int pos, int n, char c);		&#x2F;&#x2F;在指定位置插入n个字符c
+string&amp; erase(int pos, int n &#x3D; npos);	&#x2F;&#x2F;删除从Pos开始的n个字符 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	9.string和const char*转换</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;&#x2F;string 转 char*
 string str &#x3D; &quot;itcast&quot;;
-constchar* cstr &#x3D; str.c_str();
+const char* cstr &#x3D; str.c_str();
 &#x2F;&#x2F;char* 转 string 
 char* s &#x3D; &quot;itcast&quot;;
 string sstr(s);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>4.常用的api中的注意:</p>
-<p>​	1.[]和at区别：[]如果越界，不抛异常，直接挂。at会抛异常</p>
+<p>​	1.[]和at区别：[]如果越界，<strong>不抛异常</strong>，直接挂。<strong>at会抛异常</strong></p>
 <p>​	2.字符串内存重新分配，[]和at获取的字符引用，再次使用时，可以能会出错</p>
 <p>​	3.string和char *的区别：string是一个类，char *是一个指针</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void test10()
@@ -628,7 +628,7 @@ string sstr(s);<span aria-hidden="true" class="line-numbers-rows"><span></span><
 
 <h2 id="vector容器"><a href="#vector容器" class="headerlink" title="*vector容器"></a>*vector容器</h2><p>1.数据结构:连续存储空间</p>
 <p>2.迭代器：随机迭代器</p>
-<p>3.vector容器动态增长原理</p>
+<p>3.<strong>vector容器动态增长原理</strong></p>
 <p>​	1.当存储空不够时，会开辟另一块大的空间，然后把数据拷贝过去，最后在销毁原来的空间</p>
 <p>​	2.申请的空间,会比用户需求大一点</p>
 <p>​	3.重新分配空间，那么原来的迭代器就会失效</p>
@@ -636,41 +636,41 @@ string sstr(s);<span aria-hidden="true" class="line-numbers-rows"><span></span><
 <p>​	1.构造</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">vector&lt;T&gt; v; &#x2F;&#x2F;采用模板实现类实现，默认构造函数
 vector&lt;T&gt; v(n); &#x2F;&#x2F; 定义了n个整型元素的向量，但是这个n个元素没有初始化，值为随机值；
-vector(v.begin(), v.end());&#x2F;&#x2F;将v[begin(), end())区间中的元素拷贝给本身。
-vector(n, elem);&#x2F;&#x2F;构造函数将n个elem拷贝给本身。
-vector(const vector &amp;vec);&#x2F;&#x2F;拷贝构造函数。
+vector(v.begin(), v.end());	&#x2F;&#x2F;将v[begin(), end())区间中的元素拷贝给本身。
+vector(n, elem);	&#x2F;&#x2F;构造函数将n个elem拷贝给本身。
+vector(const vector &amp;vec);	&#x2F;&#x2F;拷贝构造函数。
 
 &#x2F;&#x2F;例子 使用第二个构造函数 我们可以...
 int arr[] &#x3D; &#123;2,3,4,1,9&#125;;
 vector&lt;int&gt; v1(arr, arr + sizeof(arr) &#x2F; sizeof(int)); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	2.赋值操作</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">assign(beg, end);&#x2F;&#x2F;将[beg, end)区间中的数据拷贝赋值给本身。
-assign(n, elem);&#x2F;&#x2F;将n个elem拷贝赋值给本身。
-vector&amp;operator&#x3D;(const vector  &amp;vec);&#x2F;&#x2F;重载等号操作符
-swap(vec);&#x2F;&#x2F; 将vec与本身的元素互换。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">assign(beg, end);	&#x2F;&#x2F;将[beg, end)区间中的数据拷贝赋值给本身。
+assign(n, elem);	&#x2F;&#x2F;将n个elem拷贝赋值给本身。
+vector&amp;operator&#x3D;(const vector  &amp;vec);	&#x2F;&#x2F;重载等号操作符
+swap(vec);	&#x2F;&#x2F;将vec与本身的元素互换。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	3.大小操作</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">size();&#x2F;&#x2F;返回容器中元素的个数
-empty();&#x2F;&#x2F;判断容器是否为空
-resize(int num);&#x2F;&#x2F;重新指定容器的长度为num，若容器变长，则以默认值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。
-resize(int num, elem);&#x2F;&#x2F;重新指定容器的长度为num，若容器变长，则以elem值填充新位置。如果容器变短，则末尾超出容器长&gt;度的元素被删除。
-capacity();&#x2F;&#x2F;容器的容量
-reserve(int len);&#x2F;&#x2F;容器预留len个元素长度，预留位置不初始化，元素不可访问。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">size();	&#x2F;&#x2F;返回容器中元素的个数
+empty();	&#x2F;&#x2F;判断容器是否为空
+resize(int num);	&#x2F;&#x2F;重新指定容器的长度为num，若容器变长，则以默认值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。
+resize(int num, elem);	&#x2F;&#x2F;重新指定容器的长度为num，若容器变长，则以elem值填充新位置。如果容器变短，则末尾超出容器长&gt;度的元素被删除。
+capacity();	&#x2F;&#x2F;容器的容量
+reserve(int len);	&#x2F;&#x2F;容器预留len个元素长度，预留位置不初始化，元素不可访问。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	4.数据存取</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">at(int idx); &#x2F;&#x2F;返回索引idx所指的数据，如果idx越界，抛出out_of_range异常。
-operator[];&#x2F;&#x2F;返回索引idx所指的数据，越界时，运行直接报错
-front();&#x2F;&#x2F;返回容器中第一个数据元素
-back();&#x2F;&#x2F;返回容器中最后一个数据元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+operator[];	&#x2F;&#x2F;返回索引idx所指的数据，越界时，运行直接报错
+front();	&#x2F;&#x2F;返回容器中第一个数据元素
+back();	&#x2F;&#x2F;返回容器中最后一个数据元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	5.插入和删除</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">insert(const_iterator pos, int count,ele);&#x2F;&#x2F;迭代器指向位置pos插入count个元素ele.
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">insert(const_iterator pos, int count,ele);	&#x2F;&#x2F;迭代器指向位置pos插入count个元素ele.
 push_back(ele); &#x2F;&#x2F;尾部插入元素ele
-pop_back();&#x2F;&#x2F;删除最后一个元素
-erase(const_iterator start, const_iterator end);&#x2F;&#x2F;删除迭代器从start到end之间的元素
-erase(const_iterator pos);&#x2F;&#x2F;删除迭代器指向的元素
-clear();&#x2F;&#x2F;删除容器中所有元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+pop_back();	&#x2F;&#x2F;删除最后一个元素
+erase(const_iterator start, const_iterator end);	&#x2F;&#x2F;删除迭代器从start到end之间的元素
+erase(const_iterator pos);	&#x2F;&#x2F;删除迭代器指向的元素
+clear();	&#x2F;&#x2F;删除容器中所有元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>5.常用的api中的注意:</p>
 <p>​	1.resize开辟空间，并初始化。reserve开辟空间，但不初始化.没有初始化的空间不能访问</p>
@@ -680,42 +680,42 @@ clear();&#x2F;&#x2F;删除容器中所有元素<span aria-hidden="true" class="l
 <p>2.迭代器:随机迭代器</p>
 <p>3.常用的api：</p>
 <p>​	1.构造</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">deque&lt;T&gt; deqT;&#x2F;&#x2F;默认构造形式
-deque(beg, end);&#x2F;&#x2F;构造函数将[beg, end)区间中的元素拷贝给本身。
-deque(n, elem);&#x2F;&#x2F;构造函数将n个elem拷贝给本身。
-deque(const deque &amp;deq);&#x2F;&#x2F;拷贝构造函数。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">deque&lt;T&gt; deqT;	&#x2F;&#x2F;默认构造形式
+deque(beg, end);	&#x2F;&#x2F;构造函数将[beg, end)区间中的元素拷贝给本身。
+deque(n, elem);	&#x2F;&#x2F;构造函数将n个elem拷贝给本身。
+deque(const deque &amp;deq);	&#x2F;&#x2F;拷贝构造函数。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	2.赋值</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">assign(beg, end);&#x2F;&#x2F;将[beg, end)区间中的数据拷贝赋值给本身。
-assign(n, elem);&#x2F;&#x2F;将n个elem拷贝赋值给本身。
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">assign(beg, end);	&#x2F;&#x2F;将[beg, end)区间中的数据拷贝赋值给本身。
+assign(n, elem);	&#x2F;&#x2F;将n个elem拷贝赋值给本身。
 deque&amp;operator&#x3D;(const deque &amp;deq); &#x2F;&#x2F;重载等号操作符 
-swap(deq);&#x2F;&#x2F; 将deq与本身的元素互换<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+swap(deq);	&#x2F;&#x2F;将deq与本身的元素互换<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	3.大小</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">deque.size();&#x2F;&#x2F;返回容器中元素的个数
-deque.empty();&#x2F;&#x2F;判断容器是否为空
-deque.resize(num);&#x2F;&#x2F;重新指定容器的长度为num,若容器变长，则以默认值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">deque.size();	&#x2F;&#x2F;返回容器中元素的个数
+deque.empty();	&#x2F;&#x2F;判断容器是否为空
+deque.resize(num);	&#x2F;&#x2F;重新指定容器的长度为num,若容器变长，则以默认值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。
 deque.resize(num, elem); &#x2F;&#x2F;重新指定容器的长度为num,若容器变长，则以elem值填充新位置,如果容器变短，则末尾超出容器长度的元素被删除。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	4.双端插入和删除操作</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">push_back(elem);&#x2F;&#x2F;在容器尾部添加一个数据
-push_front(elem);&#x2F;&#x2F;在容器头部插入一个数据
-pop_back();&#x2F;&#x2F;删除容器最后一个数据
-pop_front();&#x2F;&#x2F;删除容器第一个数据
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">push_back(elem);	&#x2F;&#x2F;在容器尾部添加一个数据
+push_front(elem);	&#x2F;&#x2F;在容器头部插入一个数据
+pop_back();	&#x2F;&#x2F;删除容器最后一个数据
+pop_front();	&#x2F;&#x2F;删除容器第一个数据
 
-at(idx);&#x2F;&#x2F;返回索引idx所指的数据，如果idx越界，抛出out_of_range。
-operator[];&#x2F;&#x2F;返回索引idx所指的数据，如果idx越界，不抛出异常，直接出错。
-front();&#x2F;&#x2F;返回第一个数据。
-back();&#x2F;&#x2F;返回最后一个数据<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+at(idx);	&#x2F;&#x2F;返回索引idx所指的数据，如果idx越界，抛出out_of_range。
+operator[];	&#x2F;&#x2F;返回索引idx所指的数据，如果idx越界，不抛出异常，直接出错。
+front();	&#x2F;&#x2F;返回第一个数据。
+back();	&#x2F;&#x2F;返回最后一个数据<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	5.插入和删除操作</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">insert(pos,elem);&#x2F;&#x2F;在pos位置插入一个elem元素的拷贝，返回新数据的位置。
-insert(pos,n,elem);&#x2F;&#x2F;在pos位置插入n个elem数据，无返回值。
-insert(pos,beg,end);&#x2F;&#x2F;在pos位置插入[beg,end)区间的数据，无返回值。
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">insert(pos,elem);	&#x2F;&#x2F;在pos位置插入一个elem元素的拷贝，返回新数据的位置。
+insert(pos,n,elem);	&#x2F;&#x2F;在pos位置插入n个elem数据，无返回值。
+insert(pos,beg,end);	&#x2F;&#x2F;在pos位置插入[beg,end)区间的数据，无返回值。
 
-clear();&#x2F;&#x2F;移除容器的所有数据
-erase(beg,end);&#x2F;&#x2F;删除[beg,end)区间的数据，返回下一个数据的位置。
-erase(pos);&#x2F;&#x2F;删除pos位置的数据，返回下一个数据的位置。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+clear();	&#x2F;&#x2F;移除容器的所有数据
+erase(beg,end);	&#x2F;&#x2F;删除[beg,end)区间的数据，返回下一个数据的位置。
+erase(pos);	&#x2F;&#x2F;删除pos位置的数据，返回下一个数据的位置。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -723,20 +723,20 @@ erase(pos);&#x2F;&#x2F;删除pos位置的数据，返回下一个数据的位置
 <p>2.迭代器:没有迭代器</p>
 <p>3.常用的api:</p>
 <p>​	1.构造函数</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">stack&lt;T&gt; stk;&#x2F;&#x2F;stack采用模板类实现， stack对象的默认构造形式： 
-stack(const stack &amp;stk);&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">stack&lt;T&gt; stk;	&#x2F;&#x2F;stack采用模板类实现， stack对象的默认构造形式： 
+stack(const stack &amp;stk);	&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>​	2.赋值</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">stack&amp;operator&#x3D;(const stack &amp;stk);&#x2F;&#x2F;重载等号操作符<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">stack&amp;operator&#x3D;(const stack &amp;stk);	&#x2F;&#x2F;重载等号操作符<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>​	3.数据存取</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">push(elem);&#x2F;&#x2F;向栈顶添加元素
-pop();&#x2F;&#x2F;从栈顶移除第一个元素
-top();&#x2F;&#x2F;返回栈顶元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">push(elem);	&#x2F;&#x2F;向栈顶添加元素
+pop();	&#x2F;&#x2F;从栈顶移除第一个元素
+top();	&#x2F;&#x2F;返回栈顶元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>​	3.大小操作</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">empty();&#x2F;&#x2F;判断堆栈是否为空
-size();&#x2F;&#x2F;返回堆栈的大小<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">empty();	&#x2F;&#x2F;判断堆栈是否为空
+size();	&#x2F;&#x2F;返回堆栈的大小<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
 
@@ -744,21 +744,21 @@ size();&#x2F;&#x2F;返回堆栈的大小<span aria-hidden="true" class="line-num
 <p>2.迭代器：没有迭代器</p>
 <p>3.常用的api:</p>
 <p>​	1.构造函数</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">queue&lt;T&gt; queT;&#x2F;&#x2F;queue采用模板类实现，queue对象的默认构造形式：
-queue(const queue &amp;que);&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">queue&lt;T&gt; queT;	&#x2F;&#x2F;queue采用模板类实现，queue对象的默认构造形式：
+queue(const queue &amp;que);	&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>​	2.存取、插入和删除操作</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">push(elem);&#x2F;&#x2F;往队尾添加元素
-pop();&#x2F;&#x2F;从队头移除第一个元素
-back();&#x2F;&#x2F;返回最后一个元素
-front();&#x2F;&#x2F;返回第一个元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">push(elem);	&#x2F;&#x2F;往队尾添加元素
+pop();	&#x2F;&#x2F;从队头移除第一个元素
+back();	&#x2F;&#x2F;返回最后一个元素
+front();	&#x2F;&#x2F;返回第一个元素<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	3.赋值</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">queue&amp;operator&#x3D;(const queue &amp;que);&#x2F;&#x2F;重载等号操作符	<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">queue&amp;operator&#x3D;(const queue &amp;que);	&#x2F;&#x2F;重载等号操作符	<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>​	4.大小操作</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">empty();&#x2F;&#x2F;判断队列是否为空
-size();&#x2F;&#x2F;返回队列的大小<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">empty();	&#x2F;&#x2F;判断队列是否为空
+size();	&#x2F;&#x2F;返回队列的大小<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
 
@@ -766,57 +766,57 @@ size();&#x2F;&#x2F;返回队列的大小<span aria-hidden="true" class="line-num
 <p>2.迭代器：双向迭代器</p>
 <p>3.常用的api:</p>
 <p>​	1.构造</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">list&lt;T&gt; lstT;&#x2F;&#x2F;list采用采用模板类实现,对象的默认构造形式：
-list(beg,end);&#x2F;&#x2F;构造函数将[beg, end)区间中的元素拷贝给本身。
-list(n,elem);&#x2F;&#x2F;构造函数将n个elem拷贝给本身。
-list(const list &amp;lst);&#x2F;&#x2F;拷贝构造函数。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">list&lt;T&gt; lstT;	&#x2F;&#x2F;list采用采用模板类实现,对象的默认构造形式：
+list(beg,end);	&#x2F;&#x2F;构造函数将[beg, end)区间中的元素拷贝给本身。
+list(n,elem);	&#x2F;&#x2F;构造函数将n个elem拷贝给本身。
+list(const list &amp;lst);	&#x2F;&#x2F;拷贝构造函数。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	2.数据元素的插入和删除</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">push_back(elem);&#x2F;&#x2F;在容器尾部加入一个元素
-pop_back();&#x2F;&#x2F;删除容器中最后一个元素
-push_front(elem);&#x2F;&#x2F;在容器开头插入一个元素
-pop_front();&#x2F;&#x2F;从容器开头移除第一个元素
-insert(pos,elem);&#x2F;&#x2F;在pos位置插elem元素的拷贝，返回新数据的位置。
-insert(pos,n,elem);&#x2F;&#x2F;在pos位置插入n个elem数据，无返回值。
-insert(pos,beg,end);&#x2F;&#x2F;在pos位置插入[beg,end)区间的数据，无返回值。
-clear();&#x2F;&#x2F;移除容器的所有数据
-erase(beg,end);&#x2F;&#x2F;删除[beg,end)区间的数据，返回下一个数据的位置。
-erase(pos);&#x2F;&#x2F;删除pos位置的数据，返回下一个数据的位置。
-remove(elem);&#x2F;&#x2F;删除容器中所有与elem值匹配的元素。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">push_back(elem);	&#x2F;&#x2F;在容器尾部加入一个元素
+pop_back();	&#x2F;&#x2F;删除容器中最后一个元素
+push_front(elem);	&#x2F;&#x2F;在容器开头插入一个元素
+pop_front();	&#x2F;&#x2F;从容器开头移除第一个元素
+insert(pos,elem);	&#x2F;&#x2F;在pos位置插elem元素的拷贝，返回新数据的位置。
+insert(pos,n,elem);	&#x2F;&#x2F;在pos位置插入n个elem数据，无返回值。
+insert(pos,beg,end);	&#x2F;&#x2F;在pos位置插入[beg,end)区间的数据，无返回值。
+clear();	&#x2F;&#x2F;移除容器的所有数据
+erase(beg,end);	&#x2F;&#x2F;删除[beg,end)区间的数据，返回下一个数据的位置。
+erase(pos);	&#x2F;&#x2F;删除pos位置的数据，返回下一个数据的位置。
+remove(elem);	&#x2F;&#x2F;删除容器中所有与elem值匹配的元素。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	3.大小操作</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">size();&#x2F;&#x2F;返回容器中元素的个数
-empty();&#x2F;&#x2F;判断容器是否为空
-resize(num);&#x2F;&#x2F;重新指定容器的长度为num，
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">size();	&#x2F;&#x2F;返回容器中元素的个数
+empty();	&#x2F;&#x2F;判断容器是否为空
+resize(num);	&#x2F;&#x2F;重新指定容器的长度为num，
 &#x2F;&#x2F;若容器变长，则以默认值填充新位置。
 &#x2F;&#x2F;如果容器变短，则末尾超出容器长度的元素被删除。
-resize(num, elem);&#x2F;&#x2F;重新指定容器的长度为num，
+resize(num, elem);	&#x2F;&#x2F;重新指定容器的长度为num，
 &#x2F;&#x2F;若容器变长，则以elem值填充新位置。
 &#x2F;&#x2F;如果容器变短，则末尾超出容器长度的元素被删除。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	4.赋值操作</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">assign(beg, end);&#x2F;&#x2F;将[beg, end)区间中的数据拷贝赋值给本身。
-assign(n, elem);&#x2F;&#x2F;将n个elem拷贝赋值给本身。
-list&amp;operator&#x3D;(const list &amp;lst);&#x2F;&#x2F;重载等号操作符
-swap(lst);&#x2F;&#x2F;将lst与本身的元素互换。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">assign(beg, end);	&#x2F;&#x2F;将[beg, end)区间中的数据拷贝赋值给本身。
+assign(n, elem);	&#x2F;&#x2F;将n个elem拷贝赋值给本身。
+list&amp;operator&#x3D;(const list &amp;lst);	&#x2F;&#x2F;重载等号操作符
+swap(lst);	&#x2F;&#x2F;将lst与本身的元素互换。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	5.数据的存取</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">front();&#x2F;&#x2F;返回第一个元素。
-back();&#x2F;&#x2F;返回最后一个元素。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">front();	&#x2F;&#x2F;返回第一个元素。
+back();	&#x2F;&#x2F;返回最后一个元素。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>​	6.反转和排序</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">reverse();&#x2F;&#x2F;反转链表，比如lst包含1,3,5元素，运行此方法后，lst就包含5,3,1元素。
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">reverse();	&#x2F;&#x2F;反转链表，比如lst包含1,3,5元素，运行此方法后，lst就包含5,3,1元素。
 sort(); &#x2F;&#x2F;list排序
 
-list.unique();&#x2F;&#x2F;去除重复的单词<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+list.unique();	&#x2F;&#x2F;去除重复的单词<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>4.注意：list容器不能使用常用的sort,只能使用自己的sort</p>
 <h2 id="pair对组"><a href="#pair对组" class="headerlink" title="pair对组"></a>pair对组</h2><p>1.pair对组是一个类，类中有两个公有的成员变量</p>
 <p>2.对组通常用来接收key-vluae这样的元素</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;&#x2F;第一种方法创建一个对组
 pair&lt;string, int&gt; pair1(string(&quot;name&quot;), 20);
-cout &lt;&lt; pair1.first &lt;&lt; endl; &#x2F;&#x2F;访问pair第一个值
-cout &lt;&lt; pair1.second &lt;&lt; endl;&#x2F;&#x2F;访问pair第二个值
+cout &lt;&lt; pair1.first &lt;&lt; endl; 	&#x2F;&#x2F;访问pair第一个值
+cout &lt;&lt; pair1.second &lt;&lt; endl;	&#x2F;&#x2F;访问pair第二个值
 &#x2F;&#x2F;第二种
 pair&lt;string, int&gt; pair2 &#x3D; make_pair(&quot;name&quot;, 30);
 cout &lt;&lt; pair2.first &lt;&lt; endl;
@@ -834,31 +834,31 @@ cout &lt;&lt; pair3.second &lt;&lt; endl;<span aria-hidden="true" class="line-nu
 <p>4.迭代器：双向迭代器</p>
 <p>5.常用的api:</p>
 <p>​	1.构造</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">set&lt;T&gt; st;&#x2F;&#x2F;set默认构造函数：
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">set&lt;T&gt; st;	&#x2F;&#x2F;set默认构造函数：
 mulitset&lt;T&gt; mst; &#x2F;&#x2F;multiset默认构造函数: 
-set(const set &amp;st);&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+set(const set &amp;st);	&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>​	2.赋值</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">set&amp;operator&#x3D;(const set &amp;st);&#x2F;&#x2F;重载等号操作符
-swap(st);&#x2F;&#x2F;交换两个集合容器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">set&amp;operator&#x3D;(const set &amp;st);	&#x2F;&#x2F;重载等号操作符
+swap(st);	&#x2F;&#x2F;交换两个集合容器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>​	3.大小</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">size();&#x2F;&#x2F;返回容器中元素的数目
-empty();&#x2F;&#x2F;判断容器是否为空<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">size();	&#x2F;&#x2F;返回容器中元素的数目
+empty();	&#x2F;&#x2F;判断容器是否为空<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>​	4.插入和删除</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">insert(elem);&#x2F;&#x2F;在容器中插入元素。
-clear();&#x2F;&#x2F;清除所有元素
-erase(pos);&#x2F;&#x2F;删除pos迭代器所指的元素，返回下一个元素的迭代器。
-erase(beg, end);&#x2F;&#x2F;删除区间[beg,end)的所有元素 ，返回下一个元素的迭代器。
-erase(elem);&#x2F;&#x2F;删除容器中值为elem的元素。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">insert(elem);	&#x2F;&#x2F;在容器中插入元素。
+clear();	&#x2F;&#x2F;清除所有元素
+erase(pos);	&#x2F;&#x2F;删除pos迭代器所指的元素，返回下一个元素的迭代器。
+erase(beg, end);	&#x2F;&#x2F;删除区间[beg,end)的所有元素 ，返回下一个元素的迭代器。
+erase(elem);	&#x2F;&#x2F;删除容器中值为elem的元素。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	5.查找操作</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">find(key);&#x2F;&#x2F;查找键key是否存在,若存在，返回该键的元素的迭代器；若不存在，返回set.end();
-count(key);&#x2F;&#x2F;查找键key的元素个数
-lower_bound(keyElem);&#x2F;&#x2F;返回第一个key&gt;&#x3D;keyElem元素的迭代器。
-upper_bound(keyElem);&#x2F;&#x2F;返回第一个key&gt;keyElem元素的迭代器。
-equal_range(keyElem);&#x2F;&#x2F;返回容器中key与keyElem相等的上下限的两个迭代器。
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">find(key);	&#x2F;&#x2F;查找键key是否存在,若存在，返回该键的元素的迭代器；若不存在，返回set.end();
+count(key);	&#x2F;&#x2F;查找键key的元素个数
+lower_bound(keyElem);	&#x2F;&#x2F;返回第一个key&gt;&#x3D;keyElem元素的迭代器。
+upper_bound(keyElem);	&#x2F;&#x2F;返回第一个key&gt;keyElem元素的迭代器。
+equal_range(keyElem);	&#x2F;&#x2F;返回容器中key与keyElem相等的上下限的两个迭代器。
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>6.改变规则：默认是从小到大，改变规则，加入谓词到&lt;&gt;第二个参数中</p>
@@ -872,26 +872,26 @@ equal_range(keyElem);&#x2F;&#x2F;返回容器中key与keyElem相等的上下限�
 <p>4.map容器和multimap容器的区别是multimap允许有相同的元素</p>
 <p>5.常用的api:</p>
 <p>​	1.构造</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">map&lt;T1, T2&gt; mapTT;&#x2F;&#x2F;map默认构造函数: 
-map(const map &amp;mp);&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">map&lt;T1, T2&gt; mapTT;	&#x2F;&#x2F;map默认构造函数: 
+map(const map &amp;mp);	&#x2F;&#x2F;拷贝构造函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>​	2.赋值</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">map&amp;operator&#x3D;(const map &amp;mp);&#x2F;&#x2F;重载等号操作符
-swap(mp);&#x2F;&#x2F;交换两个集合容器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">map&amp;operator&#x3D;(const map &amp;mp);	&#x2F;&#x2F;重载等号操作符
+swap(mp);	&#x2F;&#x2F;交换两个集合容器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>​	3.大小</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">size();&#x2F;&#x2F;返回容器中元素的数目
-empty();&#x2F;&#x2F;判断容器是否为空<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">size();	&#x2F;&#x2F;返回容器中元素的数目
+empty();	&#x2F;&#x2F;判断容器是否为空<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>​	4.查找</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">find(key);&#x2F;&#x2F;查找键key是否存在,若存在，返回该键的元素的迭代器；&#x2F;若不存在，返回map.end();
-count(keyElem);&#x2F;&#x2F;返回容器中key为keyElem的对组个数。对map来说，要么是0，要么是1。对multimap来说，值可能大于1。
-lower_bound(keyElem);&#x2F;&#x2F;返回第一个key&gt;&#x3D;keyElem元素的迭代器。
-upper_bound(keyElem);&#x2F;&#x2F;返回第一个key&gt;keyElem元素的迭代器。	
-equal_range(keyElem);&#x2F;&#x2F;返回容器中key与keyElem相等的上下限的两个迭代器。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">find(key);	&#x2F;&#x2F;查找键key是否存在,若存在，返回该键的元素的迭代器；&#x2F;若不存在，返回map.end();
+count(keyElem);	&#x2F;&#x2F;返回容器中key为keyElem的对组个数。对map来说，要么是0，要么是1。对multimap来说，值可能大于1。
+lower_bound(keyElem);	&#x2F;&#x2F;返回第一个key&gt;&#x3D;keyElem元素的迭代器。
+upper_bound(keyElem);	&#x2F;&#x2F;返回第一个key&gt;keyElem元素的迭代器。	
+equal_range(keyElem);	&#x2F;&#x2F;返回容器中key与keyElem相等的上下限的两个迭代器。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	5.插入</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">map.insert(...); &#x2F;&#x2F;往容器插入元素，返回pair&lt;iterator,bool&gt;
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">map.insert(...); 	&#x2F;&#x2F;往容器插入元素，返回pair&lt;iterator,bool&gt;
 map&lt;int, string&gt; mapStu;
 &#x2F;&#x2F; 第一种 通过pair的方式插入对象
 mapStu.insert(pair&lt;int, string&gt;(3, &quot;小张&quot;));
@@ -904,10 +904,10 @@ mapStu[3] &#x3D; &quot;小刘&quot;;
 mapStu[5] &#x3D; &quot;小王&quot;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>​	6.删除</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">clear();&#x2F;&#x2F;删除所有元素
-erase(pos);&#x2F;&#x2F;删除pos迭代器所指的元素，返回下一个元素的迭代器。
-erase(beg,end);&#x2F;&#x2F;删除区间[beg,end)的所有元素 ，返回下一个元素的迭代器。
-erase(keyElem);&#x2F;&#x2F;删除容器中key为keyElem的对组。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">clear();	&#x2F;&#x2F;删除所有元素
+erase(pos);	&#x2F;&#x2F;删除pos迭代器所指的元素，返回下一个元素的迭代器。
+erase(beg,end);	&#x2F;&#x2F;删除区间[beg,end)的所有元素 ，返回下一个元素的迭代器。
+erase(keyElem);	&#x2F;&#x2F;删除容器中key为keyElem的对组。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1403,9 +1403,9 @@ void test04()
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="STL的介绍">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="STL的总结归纳">
                         
-                        <span class="card-title">STL的介绍</span>
+                        <span class="card-title">STL的总结归纳</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
